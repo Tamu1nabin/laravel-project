@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,19 +16,33 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return Inertia::render('Welcome', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
 });
+
 Route::get('/homepage','App\Http\Controllers\UserController@index')->name('homepage');
 Route::get('/about','App\Http\Controllers\UserController@about')->name('about');
+Route::get('/service','App\Http\Controllers\UserController@service')->name('service');
 Route::get('/portfolio','App\Http\Controllers\UserController@portfolio')->name('portfolio');
-Route::get('/blog','App\Http\Controllers\UserController@blog')->name('blog');
-Route::get('/services','App\Http\Controllers\UserController@services')->name('services');
 Route::get('/team','App\Http\Controllers\UserController@team')->name('team');
-Route::get('/contact','App\Http\Controllers\UserController@contact')->name('contact');
 Route::get('/pricing','App\Http\Controllers\UserController@pricing')->name('pricing');
+Route::get('/blog','App\Http\Controllers\UserController@blog')->name('blog');
+Route::get('/contact','App\Http\Controllers\UserController@contact')->name('contact');
+// admin routes
+Route::get('/admin/home','App\Http\controllers\Admincontroller@index')->name('admin.home');
 
-//adminroute
-Route::get('/admin/home','App\Http\Controllers\AdminController@index')->name('admin,home');
+Route::get('/admin/addcategory','App\Http\controllers\Admincontroller@addcategory')->name('admin.addcategory');
+Route::get('/admin/addproduct','App\Http\controllers\Admincontroller@addproduct')->name('/admin.addproduct');
+
+
+
+
+
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    return Inertia::render('Dashboard');
 })->name('dashboard');

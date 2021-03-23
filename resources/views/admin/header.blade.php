@@ -23,7 +23,7 @@
   <link href="{{asset('admin/assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css')}}" rel="stylesheet" />
   <link href="{{asset('admin/assets/fullcalendar/fullcalendar/fullcalendar.css')}}" rel="stylesheet" />
   <!-- easy pie chart-->
-  <link href="{{asset(admin/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css')}}" rel="stylesheet" type="text/css" media="screen" />
+  <link href="{{asset('admin/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css')}}" rel="stylesheet" type="text/css" media="screen" />
   <!-- owl carousel -->
   <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
   <link href="{{asset('admin/css/jquery-jvectormap-1.2.2.css')}}" rel="stylesheet">
@@ -274,7 +274,7 @@
                             <span class="profile-ava">
                                 <img alt="" src="img/avatar1_small.jpg">
                             </span>
-                            <span class="username">Jenifer Smith</span>
+                            <span class="username">{{Auth::user()->name}}</span>
                             <b class="caret"></b>
                         </a>
             <ul class="dropdown-menu extended logout">
@@ -292,7 +292,16 @@
                 <a href="#"><i class="icon_chat_alt"></i> Chats</a>
               </li>
               <li>
-                <a href="login.html"><i class="icon_key_alt"></i> Log Out</a>
+                     <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+
+                    <x-jet-responsive-nav-link href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                    this.closest('form').submit();">
+                        {{ __('Log Out') }}
+                    </x-jet-responsive-nav-link>
+                </form>
+
               </li>
               <li>
                 <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
