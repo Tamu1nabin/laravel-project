@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class AdminController extends Controller
 {
@@ -28,9 +29,18 @@ class AdminController extends Controller
     }
 
     public function addproduct(){
-        return view('admin.addproduct');
+        $category=Category::orderBy('id','asc')->get();
+        return view('admin.addproduct',['category'=>$category]);
     }
 
+    public function storecategory(Request $request){
+     Category::create([
+        'category_name'=>$request->get('cname')
+     ]);
+
+     $request->session()->flash('msg','Category Added succesfully');
+     return redirect()->back();
+ }
 
     /**
      * Show the form for creating a new resource.
