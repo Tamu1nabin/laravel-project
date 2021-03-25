@@ -15,15 +15,10 @@ class CreateCategoriesTable extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('product_name');
-            $table->string('product_price');
-            $table->string('product_quatity');
-            $table->text('product_description');
-            $table->string('product_image');
-            $table->unsigenedBigInteger('category_id');
+            $table->string('category_name');
+           
 
-
-            $table->foreign('category_id')->references('id')->on('categories');
+          
             
             $table->timestamps();
 

@@ -38,12 +38,14 @@ Route::get('/admin/home','App\Http\controllers\Admincontroller@index')->name('ad
 Route::get('/admin/addcategory','App\Http\controllers\Admincontroller@addcategory')->name('admin.addcategory');
 Route::post('/admin/storecategory','App\Http\controllers\Admincontroller@storecategory')->name('admin.storecategory');
 
-Route::get('/admin/addproduct','App\Http\controllers\Admincontroller@addproduct')->name('/admin.addproduct');
+Route::get('/admin/addproduct','App\Http\controllers\Admincontroller@addproduct')->name('admin.addproduct');
 
 // Route::post('/admin/storecategory','App\Http\controllers\Admincontroller@storecategory')->name('/admin.storecategory');
 
 
+Route::post('/admin/storeproduct','App\Http\controllers\Admincontroller@storeproduct')->name('admin.storeproduct');
 
+Route::get('/admin/showproduct','App\Http\controllers\Admincontroller@showproduct')->name('admin.showproduct');
 
 
 
