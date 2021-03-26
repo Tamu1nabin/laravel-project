@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -336,8 +335,8 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
             <ul class="sub">
-              <li><a class="" href="form_component.html">Form Elements</a></li>
-              <li><a class="" href="form_validation.html">Form Validation</a></li>
+              <li><a class="" href="{{route('admin.addproduct')}}">add product</a></li>
+              <li><a class="" href="{{route('admin.addcategory')}}">add category</a></li>
             </ul>
           </li>
           <li class="sub-menu">
@@ -374,7 +373,8 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
             <ul class="sub">
-              <li><a class="" href="basic_table.html">Basic Table</a></li>
+              <li><a class="" href="{{route('admin.showproduct')}}">showproduct</a></li>
+              <li><a class="" href="{{route('admin.showcategory')}}">showcategory</a></li>
             </ul>
           </li>
 

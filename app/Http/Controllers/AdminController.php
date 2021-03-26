@@ -69,6 +69,11 @@ public function showproduct(){
     return view('admin.showproduct',['showproduct'=>$showproduct]);
 }
 
+public function showcategory(){
+    $showcategory=Category::orderBy('id','desc')->get();
+    return view('admin.showcategory',['showcategory'=>$showcategory]);
+}
+
     /**
      * Show the form for creating a new resource.
      *

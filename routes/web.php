@@ -27,7 +27,7 @@ Route::get('/', function () {
 Route::get('/homepage','App\Http\Controllers\UserController@index')->name('homepage');
 Route::get('/about','App\Http\Controllers\UserController@about')->name('about');
 Route::get('/service','App\Http\Controllers\UserController@service')->name('service');
-Route::get('/portfolio','App\Http\Controllers\UserController@portfolio')->name('portfolio');
+Route::get('/product','App\Http\Controllers\UserController@product')->name('product');
 Route::get('/team','App\Http\Controllers\UserController@team')->name('team');
 Route::get('/pricing','App\Http\Controllers\UserController@pricing')->name('pricing');
 Route::get('/blog','App\Http\Controllers\UserController@blog')->name('blog');
@@ -40,13 +40,14 @@ Route::post('/admin/storecategory','App\Http\controllers\Admincontroller@storeca
 
 Route::get('/admin/addproduct','App\Http\controllers\Admincontroller@addproduct')->name('admin.addproduct');
 
-// Route::post('/admin/storecategory','App\Http\controllers\Admincontroller@storecategory')->name('/admin.storecategory');
+// Route::post('/admin/storecategory','App\Http\controllers\Admincontroller@storecategory')->name('admin.storecategory');
 
 
 Route::post('/admin/storeproduct','App\Http\controllers\Admincontroller@storeproduct')->name('admin.storeproduct');
 
 Route::get('/admin/showproduct','App\Http\controllers\Admincontroller@showproduct')->name('admin.showproduct');
 
+Route::get('/admin/showcategory','App\Http\controllers\Admincontroller@showcategory')->name('admin.showcategory');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

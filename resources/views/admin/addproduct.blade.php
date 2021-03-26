@@ -28,7 +28,7 @@
                     {{Session::get('msg')}}
                   </div>
                     @endif
-
+                    
 
                   <form class="form-validate form-horizontal " id="register_form" method="post" action="{{route('admin.storeproduct')}}" enctype="multipart/form-data">
                     @csrf
