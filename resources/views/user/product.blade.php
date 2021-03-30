@@ -48,11 +48,11 @@
               <img src="{{asset('admin/upload/products')}}/{{$s->product_image}}" class="img-fluid img" alt="">
               <div class="portfolio-info">
 
-                <h4>{{$s->product_name}}</h4>
+                <a href="{{route('productdetail',$s->id)}}"><h4>{{$s->product_name}}</h4></a>
                 
                 <div class="portfolio-links">
                   <a href="{{asset('admin/upload/products')}}/{{$s->product_image}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{$s->product_name}}"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                  <a href="{{route('productdetail',$s->id)}}" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>

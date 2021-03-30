@@ -32,6 +32,9 @@ Route::get('/team','App\Http\Controllers\UserController@team')->name('team');
 Route::get('/pricing','App\Http\Controllers\UserController@pricing')->name('pricing');
 Route::get('/blog','App\Http\Controllers\UserController@blog')->name('blog');
 Route::get('/contact','App\Http\Controllers\UserController@contact')->name('contact');
+Route::get('/productdetail/{id}','App\Http\Controllers\UserController@productdetail')->name('productdetail');
+
+	
 // admin routes
 Route::get('/admin/home','App\Http\controllers\Admincontroller@index')->name('admin.home');
 

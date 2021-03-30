@@ -53,6 +53,11 @@ class UserController extends Controller
         return view('user.pricing');
     }
     
+
+    public function productdetail($id){
+        $detail=Product::find($id);
+        return view('user.productdetail',compact('detail'));
+    }
     /**
      * Show the form for creating a new resource.
      *
