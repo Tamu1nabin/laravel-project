@@ -9,7 +9,7 @@
             <ol class="breadcrumb">
               <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
               <li><i class="icon_document_alt"></i>Forms</li>
-              <li><i class="fa fa-files-o"></i>Show Catgory</li>
+              <li><i class="fa fa-files-o"></i>Show Category</li>
             </ol>
           </div>
         </div>

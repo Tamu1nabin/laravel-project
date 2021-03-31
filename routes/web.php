@@ -26,13 +26,15 @@ Route::get('/', function () {
 
 Route::get('/homepage','App\Http\Controllers\UserController@index')->name('homepage');
 Route::get('/about','App\Http\Controllers\UserController@about')->name('about');
-Route::get('/service','App\Http\Controllers\UserController@service')->name('service');
+Route::get('/service','App\Http\Controllers\UserController@services')->name('service');
 Route::get('/product','App\Http\Controllers\UserController@product')->name('product');
 Route::get('/team','App\Http\Controllers\UserController@team')->name('team');
 Route::get('/pricing','App\Http\Controllers\UserController@pricing')->name('pricing');
 Route::get('/blog','App\Http\Controllers\UserController@blog')->name('blog');
 Route::get('/contact','App\Http\Controllers\UserController@contact')->name('contact');
 Route::get('/productdetail/{id}','App\Http\Controllers\UserController@productdetail')->name('productdetail');
+
+Route::get('/searchresult','App\Http\Controllers\UserController@search')->name('searchproduct');
 
 	
 // admin routes

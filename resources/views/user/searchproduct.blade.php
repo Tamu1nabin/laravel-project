@@ -10,7 +10,8 @@
 </style>
 
   <main id="main">
-    <section class="mt-5">
+
+   <section class="mt-5">
       <div class="sidebar-item search-form">
                 <form action="{{route('searchproduct')}}">
                   @csrf
@@ -21,17 +22,15 @@
       
     </section>
 
-  
-
     <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio ">
+    <section id="portfolio" class="portfolio mt-5">
       <div class="container">
 
        
 
         <div class="row portfolio-container">
 
-          @foreach($show as $s)
+          @foreach($result as $s)
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
