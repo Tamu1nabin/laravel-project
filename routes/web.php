@@ -54,6 +54,13 @@ Route::get('/admin/showproduct','App\Http\controllers\Admincontroller@showproduc
 
 Route::get('/admin/showcategory','App\Http\controllers\Admincontroller@showcategory')->name('admin.showcategory');
 
+Route::get('/admin/editcategory/{id}','App\Http\controllers\Admincontroller@editcategory')->name('admin.editcategory');
+Route::post('/admin/updatecategory/{id}','App\Http\controllers\Admincontroller@updatecategory')->name('admin.updatecategory');
+Route::get('/admin/deletecategory/{id}','App\Http\controllers\Admincontroller@deletecategory')->name('admin.deletecategory');
+
+Route::get('/admin/editproduct/{id}','App\Http\controllers\Admincontroller@editproduct')->name('admin.editproduct');
+
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');

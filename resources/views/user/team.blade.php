@@ -24,8 +24,8 @@
         <div class="row">
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
-              <img src="assets/img/team/team-1.jpg" alt="">
-              <h4>Walter White</h4>
+              <img src="{{asset('user/assets/img/team/nnnn.jpg')}}" alt="">
+              <h4>Nabin Gurung</h4>
               <span>Chief Executive Officer</span>
               <p>
                 Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
@@ -41,7 +41,7 @@
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
-              <img src="assets/img/team/team-2.jpg" alt="">
+              <img src="{{asset('user/assets/img/team/team-2.jpg')}}" alt="">
               <h4>Sarah Jhinson</h4>
               <span>Product Manager</span>
               <p>
@@ -58,7 +58,7 @@
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
-              <img src="assets/img/team/team-3.jpg" alt="">
+              <img src="{{asset('user/assets/img/team/team-3.jpg')}}" alt="">
               <h4>William Anderson</h4>
               <span>CTO</span>
               <p>

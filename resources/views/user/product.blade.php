@@ -7,11 +7,15 @@
     height: 350px;
     width: 500px;
   }
+  .sidebar{
+    margin-left: 1000px;
+  }
+  
 </style>
 
   <main id="main">
-    <section class="mt-5">
-      <div class="sidebar-item search-form">
+    <section class="mt-4">
+      <div class="sidebar">
                 <form action="{{route('searchproduct')}}">
                   @csrf
                   <input type="text" name="search" placeholder="search product here" required>

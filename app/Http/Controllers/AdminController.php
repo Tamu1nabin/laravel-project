@@ -74,6 +74,41 @@ public function showcategory(){
     return view('admin.showcategory',['showcategory'=>$showcategory]);
 }
 
+public function editcategory($id){
+    $edit=Category::find($id);
+    return view('admin.editcategory',compact('edit'));
+}
+
+public function updatecategory(Request $request,$id){
+    $updatecategory=Category::find($id);
+    $updatecategory->update([
+   'category_name'=>$request->get('cname')
+    
+    ]);
+     $request->session()->flash('msg','Category updated successfully');
+     return redirect()->back();
+
+}
+
+public function deletecategory(Request $request,$id){
+    $deletecategory=Category::find($id);
+    $deletecategory->delete();
+     $request->session()->flash('msg','Category deleted successfully');
+     return redirect()->back();
+
+}
+
+public function editproduct($id){
+     $category=Category::orderBy('id','asc')->get();
+     $edit=Product::find($id);
+
+     return view('admin.editproduct',compact('category','edit'));
+
+}
+
+
+
+
     /**
      * Show the form for creating a new resource.
      *

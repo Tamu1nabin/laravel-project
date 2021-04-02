@@ -26,7 +26,7 @@
                   <tr>
                     <th> Prodcut Name</th>
                     <th> Price</th>
-                    <th> Quantitu</th>
+                    <th> Quantity</th>
                     <th> Description</th>
                     <th> Image</th>
                     <th> Action</th>
@@ -42,8 +42,8 @@
                    <td><img src="{{asset('admin/upload/products')}}/{{$product->product_image}}" width="60"></td>
                     <td>
                       <div class="btn-group">
-                        <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
-                        <a class="btn btn-success" href="#"><i class="icon_check_alt2"></i></a>
+                        <a class="btn btn-primary" href="{{route('admin.editproduct',$product->id)}}"><i class="icon_plus_alt2"></i></a>
+                       
                         <a class="btn btn-danger" href="#"><i class="icon_close_alt2"></i></a>
                       </div>
                     </td>
