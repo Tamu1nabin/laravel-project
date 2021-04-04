@@ -106,7 +106,49 @@ public function editproduct($id){
 
 }
 
+public function updateproduct(Request $request,$id){
 
+    
+        $product=Product::find($id);
+           if($request->hasFile('image')){
+        $file=$request->file('image');
+        $image=mt_rand(10001,9999999).'_'.$file->getClientOriginalName();
+        $file->move('admin/upload/products/',$image);
+       
+        
+         if($product->product_image){
+            //to remove image from folder
+            unlink('admin/upload/products/'.$product->product_image);
+        }
+        $product->product_image=$image;
+
+    }
+    $product->update([
+        'product_name'=>$request->get('pname'),
+        'product_price'=>$request->get('price'),
+        'product_quantity'=>$request->get('quantity'),
+        'product_description'=>$request->get('description'),
+        'category_id'=>$request->get('category')
+
+     ]);
+     $request->session()->flash('msg','Product has been updated successfully');
+        return redirect()->route('admin.showproduct');
+
+    
+
+}
+
+ public function destroyproduct( Request $request,$id)
+    {
+        $product=Product::find($id);
+        if($product->product_image){
+            //to remove image from folder
+            unlink('admin/upload/products/'.$product->product_image);
+        }
+        $product->delete();
+        $request->session()->flash('msg','Product has been delete successfully');
+        return redirect()->back();
+    }
 
 
     /**

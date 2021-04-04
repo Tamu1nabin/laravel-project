@@ -60,6 +60,9 @@ Route::get('/admin/deletecategory/{id}','App\Http\controllers\Admincontroller@de
 
 Route::get('/admin/editproduct/{id}','App\Http\controllers\Admincontroller@editproduct')->name('admin.editproduct');
 
+Route::post('/admin/updateproduct/{id}','App\Http\controllers\Admincontroller@updateproduct')->name('admin.updateproduct');
+Route::get('/admin/deleteproduct/{id}','App\Http\controllers\Admincontroller@destroyproduct')->name('admin.product');
+
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
