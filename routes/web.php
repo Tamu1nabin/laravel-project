@@ -35,6 +35,7 @@ Route::get('/contact','App\Http\Controllers\UserController@contact')->name('cont
 Route::get('/productdetail/{id}','App\Http\Controllers\UserController@productdetail')->name('productdetail');
 
 Route::get('/searchresult','App\Http\Controllers\UserController@search')->name('searchproduct');
+Route::get('/productbycategory/{id}','App\Http\Controllers\UserController@productbycategory')->name('productbycategory');
 
 	
 // admin routes
@@ -61,7 +62,7 @@ Route::get('/admin/deletecategory/{id}','App\Http\controllers\Admincontroller@de
 Route::get('/admin/editproduct/{id}','App\Http\controllers\Admincontroller@editproduct')->name('admin.editproduct');
 
 Route::post('/admin/updateproduct/{id}','App\Http\controllers\Admincontroller@updateproduct')->name('admin.updateproduct');
-Route::get('/admin/deleteproduct/{id}','App\Http\controllers\Admincontroller@destroyproduct')->name('admin.product');
+Route::get('/admin/deleteproduct/{id}','App\Http\controllers\Admincontroller@deleteproduct')->name('admin.deleteproduct');
 
 
 

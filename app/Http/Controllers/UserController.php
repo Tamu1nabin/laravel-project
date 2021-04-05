@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\models\Product;
+use App\Models\Product;
+use App\Models\category;
 class UserController extends Controller
 {
     /**
@@ -59,12 +60,19 @@ class UserController extends Controller
 
         $recent=Product::orderBy('id','desc')->limit(5)->get();
 
-        return view('user.productdetail',compact('detail','recent'));
+        $category=category::withCount('products')->get();
+
+        return view('user.productdetail',compact('detail','recent','category'));
     }
     public function search(Request $request){
         $searchitem=$request->get('search');
         $result=Product::orderBy('id','desc')->where('product_name','like','%'.$searchitem.'%')->get();
         return view('user.searchproduct',['result'=>$result]);
+    }
+
+    public function productbycategory($id){
+        $category=category::find($id);
+        return view('user.productbycategory',['category'=>$category]);
     }
 
     /**

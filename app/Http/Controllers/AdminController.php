@@ -138,7 +138,7 @@ public function updateproduct(Request $request,$id){
 
 }
 
- public function destroyproduct( Request $request,$id)
+ public function deleteproduct( Request $request,$id)
     {
         $product=Product::find($id);
         if($product->product_image){

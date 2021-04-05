@@ -83,7 +83,7 @@
           <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
             <div class="count-box">
               <i class="bi bi-people"></i>
-              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="90" data-purecounter-duration="1" class="purecounter"></span>
               <p><strong>Hard Workers</strong> rerum asperiores dolor molestiae doloribu</p>
               <a href="#">Find out more &raquo;</a>
             </div>
