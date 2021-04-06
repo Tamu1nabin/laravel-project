@@ -36,7 +36,8 @@ Route::get('/productdetail/{id}','App\Http\Controllers\UserController@productdet
 
 Route::get('/searchresult','App\Http\Controllers\UserController@search')->name('searchproduct');
 Route::get('/productbycategory/{id}','App\Http\Controllers\UserController@productbycategory')->name('productbycategory');
-
+Route::get('/signup','App\Http\Controllers\UserController@signupform')->name('signup');
+Route::post('/storecustomer','App\Http\Controllers\UserController@storecustomer')->name('storecustomer');
 	
 // admin routes
 Route::get('/admin/home','App\Http\controllers\Admincontroller@index')->name('admin.home');

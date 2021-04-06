@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\category;
+use App\Models\Customer;
+   
 class UserController extends Controller
 {
     /**
@@ -73,6 +75,20 @@ class UserController extends Controller
     public function productbycategory($id){
         $category=category::find($id);
         return view('user.productbycategory',['category'=>$category]);
+    }
+
+    public function signupform(){
+        return view('user.signup');
+    }
+
+    public function storecustomer(Request $request){
+        Customer::create([
+            'name'=>$request->get('name'),
+            'email'=>$request->get('email'),
+            'password'=>bcrypt($request->get('pass'))
+        ]);
+        $request->session()->flash('msg','Account has been created successfully');
+        return redirect()->back();
     }
 
     /**
